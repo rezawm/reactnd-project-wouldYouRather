@@ -1,10 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Nav from './Nav'
+import Dashboard from './Dashboard';
+import NewQuestion from './NewQuestion';
+import Leaderboard from './Leaderboard';
 
 function App() {
   return (
-    <div className="App">
-      start again without any UI style this time!!!
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <Route path='/' exact component={Dashboard} />
+        <Route path='/new' component={NewQuestion} />
+        <Route path='/leaderboard' component={Leaderboard} />
+      </div>
+    </Router>
   );
 }
 
