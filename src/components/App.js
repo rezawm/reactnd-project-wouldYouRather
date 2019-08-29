@@ -8,8 +8,8 @@ import Leaderboard from './Leaderboard';
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Nav/>
+      <div className="app">
+        <Nav />
         <Route path='/' exact component={Dashboard} />
         <Route path='/new' component={NewQuestion} />
         <Route path='/leaderboard' component={Leaderboard} />

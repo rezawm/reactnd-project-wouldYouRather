@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.app{margin:0 auto;width:70%}
+.nav{height:50px;margin:10px 0}
+.nav a{display:inline-block;padding:10px 20px}
+.nav a:hover, .nav a.active{background:darkblue;color:#fff}
