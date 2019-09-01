@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Unanswered from './Unanswered'
 import Answered from './Answered'
-import { NavLink } from 'react-router-dom'
 
-export default function Dashboard() {
-  return (
-    <div>
-      <ul className='tab'>
-        <li><NavLink exact to="/" activeClassName='active'>Unanswered Questions</NavLink></li>
-        <li><NavLink to="/answered" activeClassName='active'>Answered Questions</NavLink></li>
-      </ul>
-      <Unanswered />
-      <Answered />
-    </div>
-  )
+export default class Dashboard extends Component {
+  state = {
+    tab: 'unanswered'
+  }
+
+  handleTabChange = (e, tab) => {
+    e.preventDefault()
+
+    this.setState(() => ({
+      tab
+    }))
+  }
+
+  render() {
+    return (
+      <div>
+        <ul className='tab'>
+          <li><a href='#unanswered' className={this.state.tab==='unanswered' ? 'active' : ''} onClick={(e) => this.handleTabChange(e, 'unanswered')}>Unanswered Questions</a></li>
+          <li><a href='#answered' className={this.state.tab==='answered' ? 'active' : ''} onClick={(e) => this.handleTabChange(e, 'answered')}>Answered Questions</a></li>
+        </ul>
+        <div className='tabBody'>
+          {this.state.tab==='unanswered' && <Unanswered />}
+          {this.state.tab==='answered' && <Answered />}
+        </div>
+      </div>
+    )
+  }
 }

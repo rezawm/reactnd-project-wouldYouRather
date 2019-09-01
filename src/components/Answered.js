@@ -9,7 +9,6 @@ export class Answered extends Component {
 
     return (
       <div>
-        <h3>Answered Questions</h3>
         {questionIds.map((id) =>
           <Question id={id} answered={true} key={id} />
         )}

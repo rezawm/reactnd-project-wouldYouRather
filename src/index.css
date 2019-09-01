@@ -19,11 +19,12 @@ code {
 .nav img{border-radius:50px;width:25px;float:left;margin:0 10px 0 0}
 .nav a:hover, .nav a.active{background:darkblue;color:#fff}
 
-.tab{list-style:none}
+.tab{list-style:none;margin-bottom:0;border-bottom:1px solid lightblue}
+.tabBody{padding:10px 20px;border:1px solid lightblue;border-top:0}
 .tab li{display:inline-block}
-.tab li a{display:inline-block;padding:10px 15px}
-.tab li a:hover{background:lightgray}
-.tab li a.active{background:lightblue;font-weight:bold}
+.tab li a{display:inline-block;padding:10px 15px;margin-bottom:-1px}
+.tab li a:hover{background:lightblue}
+.tab li a.active{font-weight:bold;background:#fff;border:1px solid lightblue;border-bottom:0}
 
 .question{border:1px solid grey;border-radius:5px;margin:15px 0}
 .question h4{background:lightgrey;padding:5px 15px;margin:0;border-bottom:1px solid grey}

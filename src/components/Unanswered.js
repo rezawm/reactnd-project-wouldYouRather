@@ -9,7 +9,6 @@ export class Unanswered extends Component {
 
     return (
       <div>
-        <h3>Unanswered Questions</h3>
         {questionIds.map((id) => (
           <Question id={id} answered={false} key={id} />
         ))}
