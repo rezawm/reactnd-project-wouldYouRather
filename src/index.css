@@ -16,6 +16,7 @@ code {
 .nav{height:50px;margin:10px 0}
 .nav a, .nav span{display:inline-block;padding:10px 15px}
 .nav span{float:right}
+.nav img{border-radius:50px;width:25px;float:left;margin:0 10px 0 0}
 .nav a:hover, .nav a.active{background:darkblue;color:#fff}
 
 .tab{list-style:none}
@@ -23,3 +24,17 @@ code {
 .tab li a{display:inline-block;padding:10px 15px}
 .tab li a:hover{background:lightgray}
 .tab li a.active{background:lightblue;font-weight:bold}
+
+.question{border:1px solid grey;border-radius:5px;margin:15px 0}
+.question h4{background:lightgrey;padding:5px 15px;margin:0;border-bottom:1px solid grey}
+.question figure{float:left;margin:20px;padding:20px 20px 20px 0;border-right:1px solid grey}
+.question figure img{width:60px;border-radius:100px}
+.question h5{margin:15px 0 10px 0}
+.question p{margin:0 0 5px 0}
+.question a, .question button{border:1px solid lightblue; border-radius:5px;padding:5px 30px;display: inline-block;margin:0 0 20px 0}
+.question a:hover, .question button:hover{background:lightblue}
+.question label{display:block;padding:5px 0}
+.question>div{width:75%;display:inline-block}
+.bar{border-radius:5px;background:lightgrey;height:30px;display:block}
+.bar span{border-radius:5px;background:blue;color:#fff;height:24px;text-align:right;display:inline-block;padding:3px 5px}
+.question i{text-align:center;display:block;font-weight:bold;font-size:12px;margin:0 0 10px 0}

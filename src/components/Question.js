@@ -7,7 +7,7 @@ export class Question extends Component {
     const { question, answered } = this.props
 
     return (
-      <div>
+      <div className='question'>
         <h4>{question.author.name} Asks:</h4>
         <figure><img width={50} src={question.author.avatarURL} alt={question.author.name} /></figure>
         <h5>Would you rather</h5>

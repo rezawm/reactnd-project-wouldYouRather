@@ -33,7 +33,7 @@ export class ViewQuestion extends Component {
       <Fragment>
         {answered
           ?
-            <div>
+            <div className='question'>
               <h4>Asked by {question.author.name}</h4>
               <figure><img width={50} src={question.author.avatarURL} alt={question.author.name} /></figure>
               <h5>Results:</h5>
@@ -49,7 +49,7 @@ export class ViewQuestion extends Component {
               </div>
             </div>
           :
-            <div>
+            <div className='question'>
               <h4>{question.author.name} Asks:</h4>
               <figure><img width={50} src={question.author.avatarURL} alt={question.author.name} /></figure>
               <form onSubmit={this.handleSubmit}>
