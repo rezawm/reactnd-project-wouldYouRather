@@ -39,3 +39,5 @@ code {
 .bar{border-radius:5px;background:lightgrey;height:30px;display:block}
 .bar span{border-radius:5px;background:blue;color:#fff;height:24px;text-align:right;display:inline-block;padding:3px 5px}
 .question i{text-align:center;display:block;font-weight:bold;font-size:12px;margin:0 0 10px 0}
+
+.your-vote{border:1px solid orange}
