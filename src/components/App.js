@@ -6,6 +6,7 @@ import NewQuestion from './NewQuestion';
 import Leaderboard from './Leaderboard';
 import Login from './Login'
 import Logout from "./Logout";
+import ViewQuestion from './ViewQuestion'
 import { connect } from 'react-redux'
 import { handeInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
@@ -35,6 +36,7 @@ class App extends Component {
                       <Route path='/leaderboard' component={Leaderboard} />
                       <Route path='/login' component={Login} />
                       <Route path='/logout' component={Logout} />
+                      <Route path='/question/:id' component={ViewQuestion} />
                     </Fragment>
                   )
                 }

@@ -37,6 +37,7 @@ class Login extends Component {
       <div className="login">
         <h3>Login</h3>
         <select value={this.state.authedUser} onChange={this.handleChange}>
+            <option value='' disabled>Select a User</option>
           {usersId.map((uid) => (
             <option key={uid} value={uid}>{users[uid].name}</option>
           ))}

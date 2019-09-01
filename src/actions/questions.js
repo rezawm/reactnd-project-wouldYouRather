@@ -1,4 +1,5 @@
-import { _getQuestions } from '../utils/_DATA'
+import { saveQuestionAnswer } from '../utils/api'
+import { receiveUsers } from './users'
 
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
@@ -10,11 +11,12 @@ export const receiveQuestions = (questions) => {
   }
 }
 
-export const handleReceiveQuestions = () => {
+export const handleQuestionAnswer = (info) => {
   return (dispatch) => {
-    return _getQuestions()
-      .then((questions) => {
+    return saveQuestionAnswer(info)
+      .then(({ questions, users }) => {
         dispatch( receiveQuestions(questions) )
+        dispatch( receiveUsers(users) )
       })
   }
 }
