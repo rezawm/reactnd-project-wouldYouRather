@@ -29,13 +29,17 @@ export class ViewQuestion extends Component {
   render() {
     const { question, answered, optionOne, optionTwo } = this.props
 
+    if ( question === null ) {
+      return (<div><h3>Bad Question!</h3></div>)
+    }
+    
     return (
       <Fragment>
         {answered
           ?
             <div className='question'>
               <h4>Asked by {question.author.name}</h4>
-              <figure><img width={50} src={question.author.avatarURL} alt={question.author.name} /></figure>
+              <figure><img src={question.author.avatarURL} alt={question.author.name} /></figure>
               <h5>Results:</h5>
               <div className={optionOne.className}>
                 <p>{question.optionOne.text}</p>
@@ -51,7 +55,7 @@ export class ViewQuestion extends Component {
           :
             <div className='question'>
               <h4>{question.author.name} Asks:</h4>
-              <figure><img width={50} src={question.author.avatarURL} alt={question.author.name} /></figure>
+              <figure><img src={question.author.avatarURL} alt={question.author.name} /></figure>
               <form onSubmit={this.handleSubmit}>
                 <h5>Would You Rather ...</h5>
                 <label>
@@ -79,7 +83,14 @@ export class ViewQuestion extends Component {
 
 const mapStateToProps = ({ questions, users, authedUser }, props) => {
   const { id } = props.match.params
-  const question = questions[id]
+  const question = questions[id] ? questions[id] : null
+
+  if( question === null ) {
+    return {
+      question
+    }
+  }
+
   const optionOne = question.optionOne.votes.length
   const optionTwo = question.optionTwo.votes.length
 

@@ -13,7 +13,7 @@ function Nav({ authedUser }) {
         : (
           <Fragment>
             <NavLink to='/logout' activeClassName='active'>Logout</NavLink>
-            <span><img width={30} src={authedUser.avatarURL} alt={authedUser.name} /> {authedUser.name}</span>
+            <span><img src={authedUser.avatarURL} alt={authedUser.name} /> {authedUser.name}</span>
           </Fragment>
         )
       }

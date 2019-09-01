@@ -9,7 +9,7 @@ export class Question extends Component {
     return (
       <div className='question'>
         <h4>{question.author.name} Asks:</h4>
-        <figure><img width={50} src={question.author.avatarURL} alt={question.author.name} /></figure>
+        <figure><img src={question.author.avatarURL} alt={question.author.name} /></figure>
         <h5>Would you rather</h5>
         <p>{question.optionOne.text}</p>
         <p>{question.optionTwo.text}</p>
