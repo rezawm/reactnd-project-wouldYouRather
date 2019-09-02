@@ -9,7 +9,7 @@ import Logout from "./Logout";
 import ViewQuestion from './ViewQuestion'
 import { connect } from 'react-redux'
 import { handeInitialData } from '../actions/shared'
-import { LoadingBar } from 'react-redux-loading'
+import { LoadingBar } from 'react-redux-loading-bar'
 
 
 class App extends Component {
@@ -22,36 +22,30 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          {this.props.loading !== true
-            ? <h3>Loading Content ...</h3>
-            : (
-              <div className="app">
-                <Nav />
-                {this.props.authedUser === null
-                  ? <Login />
-                  : (
-                    <Fragment>
-                      <Route path='/' exact component={Dashboard} />
-                      <Route path='/new' component={NewQuestion} />
-                      <Route path='/leaderboard' component={Leaderboard} />
-                      <Route path='/login' component={Login} />
-                      <Route path='/logout' component={Logout} />
-                      <Route path='/question/:id' component={ViewQuestion} />
-                    </Fragment>
-                  )
-                }
-              </div>
-            )
-          }
+          <div className="app">
+            <Nav />
+            {this.props.authedUser === null
+              ? <Login />
+              : (
+                <Fragment>
+                  <Route path='/' exact component={Dashboard} />
+                  <Route path='/new' component={NewQuestion} />
+                  <Route path='/leaderboard' component={Leaderboard} />
+                  <Route path='/login' component={Login} />
+                  <Route path='/logout' component={Logout} />
+                  <Route path='/question/:id' component={ViewQuestion} />
+                </Fragment>
+              )
+            }
+          </div>
         </Fragment>
       </Router>
     );
   }
 }
 
-const mapStateToProps = ({ authedUser, loading }) => {
+const mapStateToProps = ({ authedUser }) => {
   return {
-    loading,
     authedUser
   }
 }

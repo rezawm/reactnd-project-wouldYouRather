@@ -35,6 +35,7 @@ class NewQuestion extends Component {
 
   render () {
     const { authedUser } = this.props
+    const { optionOneText, optionTwoText } = this.state
 
     return (
       <div className='question'>
@@ -53,7 +54,7 @@ class NewQuestion extends Component {
               value={this.state.optionTwoText}
               onChange={this.handleChange} />
             </label>
-          <button type='submit'>Submit</button>
+          <button disabled={optionOneText === '' || optionTwoText === '' } type='submit'>Submit</button>
         </form>
       </div>
     )

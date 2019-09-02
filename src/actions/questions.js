@@ -1,5 +1,6 @@
 import { saveQuestionAnswer, saveQuestion } from '../utils/api'
 import { receiveUsers } from './users'
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
@@ -21,19 +22,27 @@ export const addQuestion = (question) => {
 
 export const handleQuestionAnswer = (info) => {
   return (dispatch) => {
+
+    dispatch(showLoading())
+
     return saveQuestionAnswer(info)
       .then(({ questions, users }) => {
         dispatch( receiveQuestions(questions) )
         dispatch( receiveUsers(users) )
       })
+      .then( () => dispatch(hideLoading()))
   }
 }
 
 export const handleAddQuestion = (question) => {
   return (dispatch) => {
+
+    dispatch(showLoading())
+
     return saveQuestion(question)
       .then((question) => {
         dispatch( addQuestion(question) )
       })
+      .then( () => dispatch(hideLoading()))
   }
 }
