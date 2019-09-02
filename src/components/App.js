@@ -9,7 +9,7 @@ import Logout from "./Logout";
 import ViewQuestion from './ViewQuestion'
 import { connect } from 'react-redux'
 import { handeInitialData } from '../actions/shared'
-import { LoadingBar } from 'react-redux-loading-bar'
+import LoadingBar from 'react-redux-loading-bar'
 
 
 class App extends Component {
