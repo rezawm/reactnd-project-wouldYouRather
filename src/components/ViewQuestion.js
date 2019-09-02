@@ -72,7 +72,7 @@ export class ViewQuestion extends Component {
                     checked={this.state.vote === 'optionTwo'} />
                   {question.optionTwo.text}
                 </label>
-                <button type='submit'>Submit</button>
+                <button disabled={this.state.vote === ''} type='submit'>Submit</button>
               </form>
             </div>
         }

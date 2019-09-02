@@ -121,13 +121,13 @@ function generateUID () {
 
 export function _getUsers () {
   return new Promise((res, rej) => {
-    setTimeout(() => res({...users}), 3000)
+    setTimeout(() => res({...users}), 1000)
   })
 }
 
 export function _getQuestions () {
   return new Promise((res, rej) => {
-    setTimeout(() => res({...questions}), 3000)
+    setTimeout(() => res({...questions}), 1000)
   })
 }
 
@@ -198,6 +198,6 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
       }
 
       res({ users, questions })
-    }, 500)
+    }, 1000)
   })
 }
